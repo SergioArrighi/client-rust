@@ -502,7 +502,7 @@ macro_rules! query {
 /// }
 /// ```
 ///
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Query {
     size_count: usize,
     data: Vec<u8>,
@@ -696,6 +696,7 @@ cfg_dbg!(
 /// }
 /// ```
 ///
+#[derive(Clone, Debug)]
 pub struct Pipeline {
     len: usize,
     chain: Vec<u8>,
